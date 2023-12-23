@@ -1,57 +1,38 @@
-import React from "react";
-import { getPopular } from "../api/tmdb-api";
-import PageTemplate from '../components/templateMovieListPage';
-import { useQuery } from 'react-query';
-import Spinner from '../components/spinner';
-import AddToFavoritesIcon from '../components/cardIcons/addToFavorites';
-import { useState } from "react";
+import React, { useState, useEffect, useContext } from 'react';
+import { addUser } from "../api/tasky-api";
+import { signup } from "../api/movie-api";
+import { Navigate, useLocation } from "react-router-dom";
+import { AuthContext } from '../contexts/authContext';
+import { Link } from "react-router-dom";
 
+const SignUpPage = props => {
+    const context = useContext(AuthContext);
 
-const SignUpPage = (props) => {
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
 
-    const [nameInput, setNameInput] = useState('');
+    const signUpHandler = (user, pass) => {
+        signup(userName, password);
 
-    const [passwordInput, setPasswordInput] = useState('');
-
-    const handleNameChange = (e) => {
-        setNameInput(e.target.value);
     };
-
-    const handlePasswordChange = (e) => {
-        setPasswordInput(e.target.value);
-    };
-
-
-    const handleButtonClick = () => {
-        console.log(nameInput , passwordInput)
-
-        //Insert the code here for validating the data and create/logging into an account
-    }
 
     return (
         <>
-        
-            <h3>UserName: </h3>
-            <input
-                type="text"
-                id="nameInput"
-                value={nameInput}
-                onChange={handleNameChange}
-            />
-
-
-            <h3>Password: </h3>
-            <input
-                type="text"
-                id="passwordInput"
-                value={passwordInput}
-                onChange={handlePasswordChange}
-            />
-
-            <button onClick={handleButtonClick}>Log In</button>
-
+            <h2>Login page</h2>
+            <p>You must log in to view the protected pages </p>
+            <input id="username" placeholder="user name" onChange={e => {
+                setUserName(e.target.value);
+            }}></input><br />
+            <input id="password" type="password" placeholder="password" onChange={e => {
+                setPassword(e.target.value);
+            }}></input><br />
+            <input id="password" type="password" placeholder="password again" onChange={e => {
+                setPassword(e.target.value);
+            }}></input><br />
+            {/* Login web form  */}
+            <button onClick={signUpHandler()}>Sign Up</button>
         </>
-    )
-}
+    );
+};
 
 export default SignUpPage;

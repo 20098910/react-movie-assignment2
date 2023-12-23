@@ -1,6 +1,6 @@
 # Assignment 2 - Web API.
 
-Name: Your Name
+Name: Shane
 
 ## Features.
 
@@ -14,6 +14,12 @@ A bullet-point list of the ADDITIONAL features you have implemented in the API *
 ## Setup requirements.
 
 [ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
+
+Navigate to the <b>/movies/</b> folder and run:
+
+  ```
+  npm run dev
+  ```
 
 ## API Configuration
 
