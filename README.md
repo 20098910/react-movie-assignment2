@@ -6,7 +6,7 @@ Name: Shane
 
 A bullet-point list of the ADDITIONAL features you have implemented in the API **THAT WERE NOT IN THE LABS** (or modifications to existing features)
  
- + Feature 1 
+ + Users can create and account
  + Feature 2 
  + Feature 3 
  + etc
@@ -14,12 +14,20 @@ A bullet-point list of the ADDITIONAL features you have implemented in the API *
 ## Setup requirements.
 
 [ Outline any non-standard setup steps necessary to run your app locally after cloning the repo.]
-
-Navigate to the <b>/movies/</b> folder and run:
-
+In the backend progran, naviate to the movie-api folder in the console and run 
   ```
   npm run dev
   ```
+This is required before running the main program to get login and sign up working
+
+
+
+ In this program, navigate to the <b>/movies/</b> folder and run:
+
+  ```
+  npm start
+  ```
+A web page will open in your web browser allow you to navigate the website
 
 ## API Configuration
 
